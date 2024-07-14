@@ -13,8 +13,8 @@ export default function Page({ params: { username } }: Props) {
 
   const user = users.find(user => user.user.toLowerCase() == username.toLowerCase())
 
-  return <div className="flex flex-col gap-3 justify-center items-center mt-28">
-    <div className="flex gap-3 m-16 ring ring-zinc-700 rounded-xl p-4 w-[80vw]">
+  return <div className="flex flex-col gap-3 justify-center items-center mt-14">
+    <div className="flex gap-7 m-16 p-4 w-[80vw]">
       <Avatar className="size-32">
         <AvatarFallback className="text-3xl">{user?.user.split(/(?=[A-Z])/).map(s => s.at(0) ?? "")}</AvatarFallback>
       </Avatar>
