@@ -23,7 +23,6 @@ type Prop = {
 export default function Post({
   title, description, id, user
 }: Prop) {
-  console.log(title)
   return (
     <Link href={`/post/${id}`}>
       <Card className="w-[80vw]">
