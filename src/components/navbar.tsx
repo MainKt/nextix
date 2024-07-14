@@ -7,7 +7,7 @@ export default function Navbar({ className }: { className?: string }) {
     {
       title: "Posts",
       icon: <HomeIcon/>,
-      href: "/posts"
+      href: "/post"
     },
     {
       title: "About Me",
