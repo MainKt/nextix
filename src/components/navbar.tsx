@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Navbar({ className }: { className?: string }) {
   const items = [
     {
-      title: "Posts",
+      title: "Timeline",
       icon: <HomeIcon/>,
       href: "/post"
     },

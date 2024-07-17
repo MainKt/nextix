@@ -14,7 +14,7 @@ export default function Page({ params: { username } }: Props) {
   const user = users.find(user => user.user.toLowerCase() == username.toLowerCase())
 
   return <div className="flex flex-col gap-3 justify-center items-center mt-14">
-    <div className="flex gap-7 m-16 p-4 w-[80vw]">
+    <div className="flex gap-7 m-16 p-4 w-[25rem] sm:w-[40rem]">
       <Avatar className="size-32">
         <AvatarFallback className="text-3xl">{user?.user.split(/(?=[A-Z])/).map(s => s.at(0) ?? "")}</AvatarFallback>
       </Avatar>
@@ -24,13 +24,7 @@ export default function Page({ params: { username } }: Props) {
       </div>
     </div>
     {userPosts.map(post =>
-      <Post key={post.id} user={post.user} title={post.title} description={post.description} id={post.id} />
+      <Post key={post.id} user={post.user} title={post.title} description={post.description} id={post.id} likes={post.likes} />
     )}
   </div>
-}
-
-function toTitleCase(str: string) {
-  return str.toLowerCase().replace(/(?:^|\s)\w/g, function(match) {
-    return match.toUpperCase();
-  });
 }

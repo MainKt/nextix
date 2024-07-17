@@ -17,15 +17,16 @@ type Prop = {
   title: string,
   description: string,
   id: number,
-  user: string
+  user: string,
+  likes: number
 }
 
 export default function Post({
-  title, description, id, user
+  title, description, id, user, likes
 }: Prop) {
   return (
     <Link href={`/post/${id}`}>
-      <Card className="w-[80vw]">
+      <Card className="w-[25rem] sm:w-[40rem]">
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           <CardDescription>
@@ -41,7 +42,7 @@ export default function Post({
           <div className="flex flex-col space-y-1.5">{description}</div>
         </CardContent>
         <CardFooter className="flex justify-between">
-          <HeartIcon className="text-rose-700" /> {Math.floor(Math.random() * 100) + 1}
+          <HeartIcon className="text-rose-700" /> {likes}
         </CardFooter>
       </Card>
     </Link>
